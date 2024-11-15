@@ -1,24 +1,52 @@
 {
   "name": "chat",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "PORT=3000 react-scripts start",
+    "server": "PORT=3001 nodemon --experimental-modules backend/server.ts",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "http://localhost:3001",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@types/axios": "^0.14.4",
+    "@types/react-dom": "^18.3.1",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
     "pg": "^8.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "@types/pg": "^8.11.10",
-    "@types/react": "^18.3.12"
+    "@types/react": "^18.3.12",
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
   }
 }
