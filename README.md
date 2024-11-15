@@ -22,7 +22,6 @@ A modern, real-time chat application built with React, TypeScript, Node.js, and 
   - Node.js
   - Express
   - PostgreSQL
-  - WebSocket for real-time communication
 
 ## Getting Started
 
