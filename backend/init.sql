@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS public_messages (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
