@@ -1,0 +1,331 @@
+.chat-container {
+  max-width: 1200px;
+  margin: 60px auto 40px auto;  /* Even margin top and bottom */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 100px); /* Adjust to account for top and bottom margins */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.reset-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.reset-button i {
+  font-size: 14px;
+}
+
+/* Add animation for the reset icon */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.reset-button:active i {
+  animation: spin 0.5s ease-in-out;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.chat-header h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.online-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.username-badge i {
+  font-size: 12px;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.messages-container {
+  flex: 1;
+  overflow: hidden;
+  background: #f8fafc;
+  position: relative;
+  padding: 20px 0;
+}
+
+.messages {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.message {
+  max-width: 80%;
+  margin-bottom: 25px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.message-content {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.own-message {
+  margin-left: auto;
+}
+
+.own-message .message-content {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.message-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 15px;
+}
+
+.message-user i {
+  font-size: 16px;
+}
+
+.message-time {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-left: auto;
+}
+
+.message p {
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message-form {
+  padding: 20px;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.input-container {
+  flex: 1;
+  position: relative;
+}
+
+.input-container i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+.message-form input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.message-form input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+}
+
+.message-form button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.message-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.message-form button i {
+  font-size: 14px;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff5f5;
+  color: #e53e3e;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 10px 20px;
+  font-size: 14px;
+}
+
+.error-message i {
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar styling */
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chat-container {
+    margin: 20px;
+    height: calc(100vh - 40px);
+    border-radius: 0;
+  }
+
+  .chat-header {
+    padding: 15px;
+  }
+
+  .chat-header h1 {
+    font-size: 20px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .message-form {
+    padding: 15px;
+  }
+
+  .username-badge span {
+    display: none;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .chat-container {
+    margin: 10px; /* Even smaller margins */
+    height: calc(100vh - 20px);
+  }
+}

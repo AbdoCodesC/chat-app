@@ -1,0 +1,223 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Changed from min-height to height */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  overflow: hidden; /* Add this to prevent scrolling */
+  position: fixed; /* Add this to make it static */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh; /* Add this to ensure card doesn't overflow */
+  overflow-y: auto; /* Allow scrolling within card if content is too tall */
+}
+
+.login-header {
+  text-align: center;
+  padding: 40px 40px 20px 40px;
+  background: linear-gradient(to right, #fff, #f8f9fa);
+}
+
+.login-header h1 {
+  font-size: 32px;
+  color: #2d3748;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.login-header p {
+  color: #718096;
+  font-size: 16px;
+}
+
+.login-form {
+  padding: 30px 40px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #4a5568;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 15px;
+  color: #a0aec0;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+}
+
+.join-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.join-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.join-button:active {
+  transform: translateY(0);
+}
+
+.error-message {
+  background: #fff5f5;
+  color: #e53e3e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-footer {
+  padding: 20px 40px 40px 40px;
+  background: #f8f9fa;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-2px);
+}
+
+.feature i {
+  font-size: 24px;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.feature span {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .login-card {
+    margin: 10px;
+    max-height: 85vh; /* Slightly smaller on mobile */
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .feature {
+    padding: 10px;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.input-wrapper.shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.input-wrapper.error input {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+/* Smooth transition for the input border color */
+.input-wrapper input {
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper.error i {
+  color: #ff4444;
+}
+
+.input-wrapper input::placeholder {
+  color: #a0aec0;
+  transition: color 0.3s ease;
+}
+
+.input-wrapper.error input::placeholder {
+  color: #ff4444;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  animation: fadeIn 0.5s ease-out;
+}
