@@ -6,7 +6,7 @@ interface Message {
   id: number;
   content: string;
   username: string;
-  created_at: string;
+  timestamp: string;  // Changed from created_at to timestamp
 }
 
 interface ChatRoomProps {
@@ -41,7 +41,7 @@ export function ChatRoom({ username, onLogout }: ChatRoomProps) {
       const data = await fetchMessages();
       // Sort messages by created_at in ascending order
       const sortedMessages = data.sort((a: Message, b: Message) => 
-        new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+        new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
       );
       setMessages(sortedMessages);
       setError(null);
@@ -131,7 +131,7 @@ export function ChatRoom({ username, onLogout }: ChatRoomProps) {
                     <span>{message.username}</span>
                   </div>
                   <span className="message-time">
-                    {formatTime(message.created_at)}
+                    {formatTime(message.timestamp)}
                   </span>
                 </div>
                 <p>{message.content}</p>
