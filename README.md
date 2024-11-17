@@ -47,13 +47,12 @@ A modern, real-time chat application built with React, TypeScript, Node.js, and 
   DB_DATABASE=chat_db
 
 4. Set up the database
-  bash
-  psql -U postgres
-  CREATE DATABASE chat_db;
+  brew install postgresql@15 (macOS)
+  brew services start postgresql@15 (macOS)
+  psql postgres -f backend/init.sql
 
 5. Run the application
   npm run dev
-
 
 The application will be available at `http://localhost:3000`
 
